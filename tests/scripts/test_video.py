@@ -10,6 +10,11 @@ from face_services.components.video import Video
 from face_services.components.audio import Audio
 
 
+Video.create_video_from_images('/Users/to104737/Documents/DATA/PRO/TAXI/anti_collision/masks', 
+                               output_video_path='/Users/to104737/Documents/DATA/PRO/TAXI/anti_collision/test_1_mask.mp4', 
+                               fps=10)
+
+
 
 # Video.extract_and_save_sample('tests/files/vd1/CO-r21_E_129_r720P.mp4', 'tests/files/vd1/vd1_source.mp4', 1300, 61300)
 

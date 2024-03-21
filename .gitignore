@@ -190,3 +190,5 @@ database.json
 
 
 face_services/models/face_analyzer/shape_predictor_68_face_landmarks.dat
+ffmpeg
+tests/files/video.mov
