@@ -35,21 +35,11 @@ FACE_DETECTOR_OUTPUT = {
 	'score': [],
 }
 
-FACE_DETECTOR_MODELS = 	{'detection' :
-		{
-			'yoloface' :
-			{
-				'url' : '',
-				'path' : 'face_detector/yoloface_8n.onnx',
-			},
-		}
-	}
 
 class FaceDetector:
-	def __init__(self):
+	def __init__(self, model_path):
 		self.id = uuid.uuid4()
-		self.model = onnxruntime.InferenceSession(FACE_DETECTOR_MODELS['detection']['yoloface']['path'], providers = ['CPUExecutionProvider'])
-		self.onnx_path = FACE_DETECTOR_MODELS['detection']['yoloface']['path']
+		self.model = onnxruntime.InferenceSession(model_path, providers = ['CPUExecutionProvider'])
 
 	def run(self, frame):
 		face_detector_width, face_detector_height = (640, 640)

@@ -41,13 +41,14 @@ def app_redirect(_):
 
 class FaceDetectorRequest(BaseModel):
     image_path: str
+    model_path: str
     output_path: str
 
 @app.post("/faces_services/face_detector", tags=["Testing"])
 async def face_detector(face_detector_request: FaceDetectorRequest):
     face_detector_output = None
     if face_detector_request.image_path.lower().endswith(('.png', '.jpg', '.jpeg', '.tiff', '.bmp', '.gif')) and os.path.isfile(face_detector_request.image_path):
-        face_detector = FaceDetector()
+        face_detector = FaceDetector(model_path=face_detector_request.model_path)
         face_detector_output = face_detector.run(cv2.imread(face_detector_request.image_path))
         json_object = json.dumps(face_detector_output)
         id = face_detector_request.image_path.lower().split('/')[-1].split('.')[0]
