@@ -8,9 +8,13 @@ sys.path.append(os.getcwd())
 
 from face_services.components.video import Video
 from face_services.components.audio import Audio
+import onnxruntime
 
 
 
+model = onnxruntime.InferenceSession('/Users/to104737/Documents/MATLAB/mpvs_landing/models/ydet/ydet.onnx', providers = ['CoreMLExecutionProvider'])
+model = onnxruntime.InferenceSession('/Users/to104737/Documents/MATLAB/mpvs_landing/models/yolov8/yolov8n.onnx', providers = ['CoreMLExecutionProvider'])
+model = onnxruntime.InferenceSession('/Users/to104737/Documents/MATLAB/mpvs_landing/models/yolonas/yolonas.onnx', providers = ['CoreMLExecutionProvider'])
 
 video = Video('tests/files/video.mov')
 

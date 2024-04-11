@@ -10,9 +10,21 @@ from face_services.components.video import Video
 from face_services.components.audio import Audio
 
 
-Video.create_video_from_images('/Users/to104737/Documents/DATA/PRO/TAXI/anti_collision/masks', 
-                               output_video_path='/Users/to104737/Documents/DATA/PRO/TAXI/anti_collision/test_1_mask.mp4', 
-                               fps=10)
+
+
+
+# Video.create_video_from_images('/Users/to104737/Documents/DATA/PRO/TAXI/anti_collision/frames', 
+#                                output_video_path='/Users/to104737/Documents/DATA/PRO/TAXI/anti_collision/test_1_resized.mov', 
+#                                fps=10)
+
+
+
+
+video = Video('/Users/to104737/Desktop/NK_test_1.mov')
+Video.extract_and_save_all_frames(video_path=video.path, fps=video.fps, output_folder='tests/files/vd1')
+Video.create_video_from_images('tests/files/vd1/NK_test_1', 
+                               output_video_path='/Users/to104737/Desktop/NK_test_1_reconstructed.mov', 
+                               fps=video.fps)
 
 
 
