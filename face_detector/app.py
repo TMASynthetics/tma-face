@@ -17,10 +17,10 @@ tags_metadata = [
     {
         "name": "Face Services API",
         "description": "This API provides human face processing capabilities.",
-        "externalDocs": {
-            "description": "Documentation",
-            "url": "https://jwsite.sharepoint.com/:f:/r/sites/WHQ-MEPS-TMASyntheticMedia-Team/Shared%20Documents/Products/Face%20Services%20API?csf=1&web=1&e=IVOU8p",
-        },
+        # "externalDocs": {
+        #     "description": "Documentation",
+        #     "url": "https://jwsite.sharepoint.com/:f:/r/sites/WHQ-MEPS-TMASyntheticMedia-Team/Shared%20Documents/Products/Face%20Services%20API?csf=1&web=1&e=IVOU8p",
+        # },
     },
 ]
 
